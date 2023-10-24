@@ -1,0 +1,9 @@
+{
+	"name": "adf-factorytest",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "edcdf3ae-8507-4c63-8c2c-1956f0435374",
+		"tenantId": "459ea9bc-5f92-4b27-97fe-5b8c20039ba1"
+	}
+}
