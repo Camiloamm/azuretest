@@ -1,0 +1,10 @@
+{
+	"name": "AzureKeyVault_test",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://kv-clavestest.vault.azure.net/"
+		}
+	}
+}
