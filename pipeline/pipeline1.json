@@ -137,6 +137,18 @@
 				"defaultValue": "dbo"
 			}
 		},
+		"variables": {
+			"table": {
+				"type": "Array",
+				"defaultValue": [
+					"LogisticsAddressCountryRegionStaging",
+					"PaymTermInvoiceStaging",
+					"UFTProjInvoiceJourStaging",
+					"aqs_canton",
+					"aqs_cliente"
+				]
+			}
+		},
 		"annotations": []
 	}
 }
