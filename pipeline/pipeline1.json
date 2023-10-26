@@ -51,11 +51,11 @@
 							},
 							"userProperties": [
 								{
-									"name": "source",
+									"name": "Source",
 									"value": "@{item().schema}.@{item().table}"
 								},
 								{
-									"name": "destination",
+									"name": "Destination",
 									"value": "@{item().schema2}.@{item().table}"
 								}
 							],
