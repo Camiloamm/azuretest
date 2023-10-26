@@ -51,8 +51,33 @@
 							},
 							"userProperties": [],
 							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
 								"enableStaging": false
-							}
+							},
+							"inputs": [
+								{
+									"referenceName": "AzureSqlTable1",
+									"type": "DatasetReference",
+									"parameters": {
+										"URLKeyVault": {
+											"value": "https://kv-clavestest.vault.azure.net/",
+											"type": "Expression"
+										},
+										"schema": {
+											"value": "@item().schema",
+											"type": "Expression"
+										},
+										"table": {
+											"value": "@item().table",
+											"type": "Expression"
+										}
+									}
+								}
+							]
 						}
 					]
 				}
@@ -60,23 +85,23 @@
 		],
 		"parameters": {
 			"Schema": {
-				"type": "array",
-				"defaultValue": [
-					"Finance"
-				]
+				"type": "string",
+				"defaultValue": "Finance"
 			},
 			"Schema2": {
-				"type": "array",
-				"defaultValue": [
-					"dbo"
-				]
+				"type": "string",
+				"defaultValue": "dbo"
 			}
 		},
 		"variables": {
 			"table": {
 				"type": "Array",
 				"defaultValue": [
-					"[\"LogisticsAddressCountryRegionStaging¨,\"PaymTermInvoiceStaging\",\"UFTProjInvoiceJourStaging\",\"aqs_canton\",\"aqs_cliente\"]"
+					"LogisticsAddressCountryRegionStaging",
+					"PaymTermInvoiceStaging",
+					"UFTProjInvoiceJourStaging",
+					"aqs_canton",
+					"aqs_cliente"
 				]
 			}
 		},

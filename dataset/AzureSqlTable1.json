@@ -9,10 +9,10 @@
 			"URLKeyVault": {
 				"type": "string"
 			},
-			"Schema": {
+			"schema": {
 				"type": "string"
 			},
-			"Table": {
+			"table": {
 				"type": "string"
 			}
 		},
@@ -21,11 +21,11 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": {
-				"value": "@dataset().Schema",
+				"value": "@dataset().schema",
 				"type": "Expression"
 			},
 			"table": {
-				"value": "@dataset().Table",
+				"value": "@dataset().table",
 				"type": "Expression"
 			}
 		}
