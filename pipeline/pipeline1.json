@@ -84,11 +84,11 @@
 			}
 		],
 		"parameters": {
-			"Schema": {
+			"schema": {
 				"type": "string",
 				"defaultValue": "Finance"
 			},
-			"Schema2": {
+			"schema2": {
 				"type": "string",
 				"defaultValue": "dbo"
 			}
