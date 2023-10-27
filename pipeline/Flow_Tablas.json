@@ -24,6 +24,59 @@
 						}
 					}
 				}
+			},
+			{
+				"name": "PaymTermInvoiceStaging",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "LogisticsAddressCountryRegionStaging",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "PaymTermInvoiceStaging",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "UFTProjInvoiceJourStaging",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "PaymTermInvoiceStaging",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "UFTProjInvoiceJourStaging",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "aqs_cliente",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "aqs_cliente",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
 			}
 		],
 		"parameters": {
