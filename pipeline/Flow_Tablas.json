@@ -12,7 +12,17 @@
 						"referenceName": "LogisticsAddressCountryRegionStaging",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": true,
+					"parameters": {
+						"schema": {
+							"value": "pipeline().parameters.schema",
+							"type": "Expression"
+						},
+						"schema2": {
+							"value": "@pipeline().parameters.schema2",
+							"type": "Expression"
+						}
+					}
 				}
 			}
 		],
