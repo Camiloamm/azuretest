@@ -1,0 +1,43 @@
+{
+	"name": "Flow_Tablas",
+	"properties": {
+		"activities": [
+			{
+				"name": "LogisticsAddressCountryRegionStaging",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "LogisticsAddressCountryRegionStaging",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"parameters": {
+			"schema": {
+				"type": "string",
+				"defaultValue": "finance"
+			},
+			"schema2": {
+				"type": "string",
+				"defaultValue": "dbo"
+			}
+		},
+		"variables": {
+			"table": {
+				"type": "Array",
+				"defaultValue": [
+					"LogisticsAddressCountryRegionStaging",
+					"PaymTermInvoiceStaging",
+					"UFTProjInvoiceJourStaging",
+					"aqs_canton",
+					"aqs_cliente"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
