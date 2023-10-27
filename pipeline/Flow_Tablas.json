@@ -68,11 +68,38 @@
 			{
 				"name": "aqs_cliente",
 				"type": "ExecutePipeline",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "aqs_canton",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"userProperties": [],
 				"typeProperties": {
 					"pipeline": {
 						"referenceName": "aqs_cliente",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "aqs_canton",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "UFTProjInvoiceJourStaging",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "aqs_canton",
 						"type": "PipelineReference"
 					},
 					"waitOnCompletion": true
