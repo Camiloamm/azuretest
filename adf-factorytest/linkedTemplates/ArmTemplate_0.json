@@ -91,6 +91,25 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase_test1')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -152,25 +171,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]",
 				"[concat(variables('factoryId'), '/linkedServices/AzureKeyVault_testbasic')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/AzureBlobStorage1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('AzureBlobStorage1_connectionString')]"
-				},
-				"connectVia": {
-					"referenceName": "AutoResolveIntegrationRuntime",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
 			]
 		},
 		{
@@ -250,50 +250,6 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Plantilla_Ecuador')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Excel",
-				"typeProperties": {
-					"sheetName": "Hoja1",
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": "PRUEBA_Plantilla_Ecuador.xlsx",
-						"container": "ejercicio3"
-					}
-				},
-				"schema": [
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					},
-					{
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
-			]
-		},
-		{
 			"name": "[concat(parameters('factoryName'), '/GenericDataSet')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -328,7 +284,32 @@
 				},
 				"annotations": [],
 				"type": "AzureSqlTable",
-				"schema": [],
+				"schema": [
+					{
+						"name": "ufn_sociedadesfoid",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ufn_name",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ufn_clienteid",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ufn_paisid",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ufn_estadosincronizacionfo",
+						"type": "nvarchar"
+					},
+					{
+						"name": "ufn_sociedadufinetid",
+						"type": "nvarchar"
+					}
+				],
 				"typeProperties": {
 					"schema": {
 						"value": "@dataset().schema",
@@ -342,6 +323,32 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureSqlDatabase_test1')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Plantilla_Ecuador')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Excel",
+				"typeProperties": {
+					"sheetName": "Hoja1",
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "PRUEBA_Plantilla_Ecuador.xlsx",
+						"container": "ejercicio3"
+					},
+					"firstRowAsHeader": true
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
 			]
 		},
 		{
@@ -1349,7 +1356,7 @@
 								"type": "DatasetReference",
 								"parameters": {}
 							},
-							"timeout": "0.12:00:00",
+							"timeout": "0.00:01:00",
 							"sleep": 10
 						}
 					},
@@ -1378,8 +1385,8 @@
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
-									"modifiedDatetimeStart": "2023-10-28T00:00:00.000Z",
-									"modifiedDatetimeEnd": "2023-10-28T02:00:00.000Z",
+									"modifiedDatetimeStart": "2023-10-30T00:00:00.000Z",
+									"modifiedDatetimeEnd": "2023-10-29T02:00:00.000Z",
 									"enablePartitionDiscovery": false
 								}
 							},
@@ -1396,79 +1403,74 @@
 								"mappings": [
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 1
-										},
-										"sink": {
-											"name": "Column1",
+											"name": "ufn_sociedadesfoid",
 											"type": "String",
 											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ufn_sociedadesfoid",
+											"type": "String",
+											"physicalType": "nvarchar"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 2
-										},
-										"sink": {
-											"name": "Column2",
+											"name": "ufn_name",
 											"type": "String",
 											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ufn_name",
+											"type": "String",
+											"physicalType": "nvarchar"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 3
-										},
-										"sink": {
-											"name": "Column3",
+											"name": "ufn_clienteid",
 											"type": "String",
 											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ufn_clienteid",
+											"type": "String",
+											"physicalType": "nvarchar"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 4
-										},
-										"sink": {
-											"name": "Column4",
+											"name": "ufn_paisid",
 											"type": "String",
 											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ufn_paisid",
+											"type": "String",
+											"physicalType": "nvarchar"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 5
-										},
-										"sink": {
-											"name": "Column5",
+											"name": "ufn_estadosincronizacionfo",
 											"type": "String",
 											"physicalType": "String"
+										},
+										"sink": {
+											"name": "ufn_estadosincronizacionfo",
+											"type": "String",
+											"physicalType": "nvarchar"
 										}
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 6
-										},
-										"sink": {
-											"name": "Column6",
+											"name": "ufn_sociedadufinetid",
 											"type": "String",
 											"physicalType": "String"
-										}
-									},
-									{
-										"source": {
-											"name": "Columna_prueba",
-											"type": "String"
 										},
 										"sink": {
-											"name": "Column7",
+											"name": "ufn_sociedadufinetid",
 											"type": "String",
-											"physicalType": "String"
+											"physicalType": "nvarchar"
 										}
 									}
 								],
