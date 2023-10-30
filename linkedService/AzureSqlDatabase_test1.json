@@ -1,6 +1,16 @@
 {
 	"name": "AzureSqlDatabase_test1",
 	"properties": {
+		"parameters": {
+			"URL_Key_Vault": {
+				"type": "string",
+				"defaultValue": "https://kv-clavestest.vault.azure.net/"
+			},
+			"Secret_Name_Key_Vault": {
+				"type": "string",
+				"defaultValue": "database1"
+			}
+		},
 		"annotations": [],
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
