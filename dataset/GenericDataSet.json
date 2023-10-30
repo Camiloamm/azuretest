@@ -31,7 +31,32 @@
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "ufn_sociedadesfoid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ufn_name",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ufn_clienteid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ufn_paisid",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ufn_estadosincronizacionfo",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ufn_sociedadufinetid",
+				"type": "nvarchar"
+			}
+		],
 		"typeProperties": {
 			"schema": {
 				"value": "@dataset().schema",
