@@ -1375,12 +1375,6 @@
 						"typeProperties": {
 							"source": {
 								"type": "ExcelSource",
-								"additionalColumns": [
-									{
-										"name": "Columna_prueba",
-										"value": "123"
-									}
-								],
 								"storeSettings": {
 									"type": "AzureBlobStorageReadSettings",
 									"recursive": true,
@@ -1692,7 +1686,7 @@
 					"recurrence": {
 						"frequency": "Minute",
 						"interval": 10,
-						"startTime": "2023-10-30T11:25:00",
+						"startTime": "2023-10-30T00:10:00",
 						"timeZone": "SA Pacific Standard Time"
 					}
 				}
