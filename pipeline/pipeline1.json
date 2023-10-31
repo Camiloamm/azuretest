@@ -50,11 +50,6 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
-								"source": {
-									"name": "ufn_sociedadesfoid",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "ufn_sociedadesfoid",
 									"type": "String",
@@ -62,11 +57,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "ufn_name",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "ufn_name",
 									"type": "String",
@@ -74,11 +64,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "ufn_clienteid",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "ufn_clienteid",
 									"type": "String",
@@ -86,11 +71,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "ufn_paisid",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "ufn_paisid",
 									"type": "String",
@@ -98,11 +78,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "ufn_estadosincronizacionfo",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "ufn_estadosincronizacionfo",
 									"type": "String",
@@ -110,11 +85,6 @@
 								}
 							},
 							{
-								"source": {
-									"name": "ufn_sociedadufinetid",
-									"type": "String",
-									"physicalType": "String"
-								},
 								"sink": {
 									"name": "ufn_sociedadufinetid",
 									"type": "String",
