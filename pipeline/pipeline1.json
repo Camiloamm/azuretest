@@ -3,20 +3,6 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Validation1",
-				"type": "Validation",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"dataset": {
-						"referenceName": "Plantilla_Ecuador",
-						"type": "DatasetReference"
-					},
-					"timeout": "0.00:01:00",
-					"sleep": 10
-				}
-			},
-			{
 				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [
@@ -62,6 +48,80 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "ufn_sociedadesfoid",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ufn_sociedadesfoid",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ufn_name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ufn_name",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ufn_clienteid",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ufn_clienteid",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ufn_paisid",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ufn_paisid",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ufn_estadosincronizacionfo",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ufn_estadosincronizacionfo",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							},
+							{
+								"source": {
+									"name": "ufn_sociedadufinetid",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "ufn_sociedadufinetid",
+									"type": "String",
+									"physicalType": "nvarchar"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
@@ -93,6 +153,20 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "Validation1",
+				"type": "Validation",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"dataset": {
+						"referenceName": "Plantilla_Ecuador",
+						"type": "DatasetReference"
+					},
+					"timeout": "0.12:00:00",
+					"sleep": 10
+				}
 			}
 		],
 		"annotations": []
