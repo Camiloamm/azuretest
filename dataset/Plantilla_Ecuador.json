@@ -14,45 +14,8 @@
 				"fileName": "Creacción de JOBS.xlsx",
 				"container": "ejercicio3"
 			},
-			"firstRowAsHeader": false
+			"firstRowAsHeader": true
 		},
-		"schema": [
-			{
-				"name": "HABILITADO JOB",
-				"type": "String"
-			},
-			{
-				"name": "NOMBRE JOB",
-				"type": "String"
-			},
-			{
-				"name": "PROPIETARIO",
-				"type": "String"
-			},
-			{
-				"name": "PASOS",
-				"type": "String"
-			},
-			{
-				"name": "NOTIFICACIÓN",
-				"type": "String"
-			},
-			{
-				"name": "HABILITADO PLANIFICACIÓN",
-				"type": "String"
-			},
-			{
-				"name": "PERIODO",
-				"type": "String"
-			},
-			{
-				"name": "DIAS",
-				"type": "String"
-			},
-			{
-				"name": "HORA SERVIDOR",
-				"type": "String"
-			}
-		]
+		"schema": []
 	}
 }
