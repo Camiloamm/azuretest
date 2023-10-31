@@ -8,37 +8,49 @@
 		"annotations": [],
 		"type": "Excel",
 		"typeProperties": {
-			"sheetName": "Hoja1",
+			"sheetName": "JOB",
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "PRUEBA_Plantilla_Ecuador.xlsx",
+				"fileName": "Creacción de JOBS.xlsx",
 				"container": "ejercicio3"
 			},
 			"firstRowAsHeader": true
 		},
 		"schema": [
 			{
-				"name": "a",
+				"name": "HABILITADO JOB",
 				"type": "String"
 			},
 			{
-				"name": "b",
+				"name": "NOMBRE JOB",
 				"type": "String"
 			},
 			{
-				"name": "c",
+				"name": "PROPIETARIO",
 				"type": "String"
 			},
 			{
-				"name": "d",
+				"name": "PASOS",
 				"type": "String"
 			},
 			{
-				"name": "e",
+				"name": "NOTIFICACIÓN",
 				"type": "String"
 			},
 			{
-				"name": "f",
+				"name": "HABILITADO PLANIFICACIÓN",
+				"type": "String"
+			},
+			{
+				"name": "PERIODO",
+				"type": "String"
+			},
+			{
+				"name": "DIAS",
+				"type": "String"
+			},
+			{
+				"name": "HORA SERVIDOR",
 				"type": "String"
 			}
 		]
