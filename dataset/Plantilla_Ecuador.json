@@ -16,6 +16,31 @@
 			},
 			"firstRowAsHeader": true
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "a",
+				"type": "String"
+			},
+			{
+				"name": "b",
+				"type": "String"
+			},
+			{
+				"name": "c",
+				"type": "String"
+			},
+			{
+				"name": "d",
+				"type": "String"
+			},
+			{
+				"name": "e",
+				"type": "String"
+			},
+			{
+				"name": "f",
+				"type": "String"
+			}
+		]
 	}
 }
