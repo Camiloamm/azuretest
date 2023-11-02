@@ -174,11 +174,11 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"contenedor": {
-											"value": "@pipeline().parameters.SourceStore_Location",
+											"value": "https://ststoragecurso.blob.core.windows.net/ejercicio3",
 											"type": "Expression"
 										},
 										"directorio": {
-											"value": "@pipeline().parameters.SourceStore_Directory",
+											"value": "https://ststoragecurso.blob.core.windows.net/ejercicio3/Creacion.xlsb",
 											"type": "Expression"
 										},
 										"filename": {
