@@ -1,0 +1,21 @@
+{
+	"name": "Direcciones",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Hoja1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Direcciones.xlsx",
+				"container": "ejercicio3"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
