@@ -17,7 +17,17 @@
 				"typeProperties": {
 					"dataset": {
 						"referenceName": "DataSourceFolder",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"contenedor": {
+								"value": "@pipeline().parameters.SourceStore_Location",
+								"type": "Expression"
+							},
+							"directorio": {
+								"value": "@pipeline().parameters.SourceStore_Directory",
+								"type": "Expression"
+							}
+						}
 					},
 					"fieldList": [
 						"childItems"
@@ -109,13 +119,41 @@
 							"inputs": [
 								{
 									"referenceName": "DataSourceFile",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"contenedor": {
+											"value": "@pipeline().parameters.SourceStore_Location",
+											"type": "Expression"
+										},
+										"directorio": {
+											"value": "@pipeline().parameters.SourceStore_Directory",
+											"type": "Expression"
+										},
+										"nombrearchivo": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								}
 							],
 							"outputs": [
 								{
 									"referenceName": "DataSourceDestination",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"contenedor": {
+											"value": "@pipeline().parameters.DestinationStore_Location",
+											"type": "Expression"
+										},
+										"directorio": {
+											"value": "@pipeline().parameters.DestinationStore_Directory",
+											"type": "Expression"
+										},
+										"nombrearchivo": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						},
@@ -141,7 +179,21 @@
 							"typeProperties": {
 								"dataset": {
 									"referenceName": "DataSourceFile",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"contenedor": {
+											"value": "@pipeline().parameters.SourceStore_Location",
+											"type": "Expression"
+										},
+										"directorio": {
+											"value": "@pipeline().parameters.SourceStore_Directory",
+											"type": "Expression"
+										},
+										"nombrearchivo": {
+											"value": "@item().name",
+											"type": "Expression"
+										}
+									}
 								},
 								"enableLogging": false,
 								"storeSettings": {
